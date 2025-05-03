@@ -1,0 +1,12 @@
+{
+    "users":[
+        {
+            "id":"012",
+            "email":"user1@ecom.com",
+            "name":"user1",
+            "pass":"MTIz",
+            "role":"seller"
+        }
+
+    ]
+}
