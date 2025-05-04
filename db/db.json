@@ -1,12 +1,25 @@
 {
-    "users":[
-        {
-            "id":"012",
-            "email":"user1@ecom.com",
-            "name":"user1",
-            "pass":"MTIz",
-            "role":"seller"
-        }
-
-    ]
+  "users": [
+    {
+      "id": "012",
+      "email": "stevven.helmy@gmail.com",
+      "name": "user1",
+      "pass": "MTIz",
+      "role": "seller"
+    },
+    {
+      "id": "6cbbf2fd-3cfb-4a6f-9db5-408eb9919488",
+      "name": "steven",
+      "email": "user@gmail.com",
+      "pass": "MTIz",
+      "role": "buyer"
+    },
+    {
+      "id": "aff74973-eb2c-4c41-8ca7-d16eaa498f1c",
+      "name": "user",
+      "email": "user2@user.com",
+      "pass": "MTIz",
+      "role": "buyer"
+    }
+  ]
 }

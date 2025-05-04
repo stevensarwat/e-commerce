@@ -83,25 +83,25 @@ body {
     line-height: 1.6;
 }
 
-.login-section {
+.registration-section {
     flex: 1;
     padding: 2.5rem;
     overflow-y: auto;
     max-height: 700px;
 }
 
-.login-header {
+.registration-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.login-header h1 {
+.registration-header h1 {
     color: var(--text-primary);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
-.login-header p {
+.registration-header p {
     color: var(--text-muted);
 }
 
@@ -215,7 +215,7 @@ body {
     width: 280px;
     height: 280px;
     margin-bottom: 1.5rem;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' width='500' height='500'%3E%3Cstyle%3E @keyframes float %7B 0%25 %7Btransform: translateY(0px);%7D 50%25 %7Btransform: translateY(-20px);%7D 100%25 %7Btransform: translateY(0px);%7D %7D .floating %7B animation: float 6s ease-in-out infinite; %7D %3C/style%3E%3Crect width='100%25' height='100%25' fill='%230f172a'/%3E%3Cg%3E%3Ccircle cx='250' cy='250' r='150' fill='%23312e81' opacity='0.5'/%3E%3C/g%3E%3Cg class='floating'%3E%3Ccircle cx='250' cy='250' r='120' fill='%23312e81' opacity='0.7'/%3E%3Ccircle cx='250' cy='250' r='100' fill='%234c1d95' opacity='0.8'/%3E%3Ccircle cx='250' cy='250' r='80' fill='%236d28d9' opacity='0.9'/%3E%3Cpath d='M320 220 L250 180 L180 220 L180 300 L250 340 L320 300 Z' fill='%238b5cf6' stroke='%23a78bfa' stroke-width='2'/%3E%3Cpath d='M250 180 L250 340' stroke='%23c4b5fd' stroke-width='2' opacity='0.7'/%3E%3Cpath d='M180 220 L320 300' stroke='%23c4b5fd' stroke-width='2' opacity='0.4'/%3E%3Cpath d='M320 220 L180 300' stroke='%23c4b5fd' stroke-width='2' opacity='0.4'/%3E%3Crect x='220' y='220' width='60' height='60' fill='%23c4b5fd' opacity='0.3'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M370 150 L390 150 L390 170' stroke='%23a78bfa' stroke-width='3' fill='none'/%3E%3Cpath d='M110 150 L130 150 L130 170' stroke='%23a78bfa' stroke-width='3' fill='none' transform='scale(-1,1) translate(-240,0)'/%3E%3Cpath d='M370 350 L390 350 L390 330' stroke='%23a78bfa' stroke-width='3' fill='none' transform='scale(1,-1) translate(0,-700)'/%3E%3Cpath d='M110 350 L130 350 L130 330' stroke='%23a78bfa' stroke-width='3' fill='none' transform='scale(-1,-1) translate(-240,-700)'/%3E%3C/g%3E%3Ctext x='250' y='400' text-anchor='middle' fill='%23e0e7ff' font-family='Arial' font-size='16' font-weight='bold'%3ESellers Platform%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' width='500' height='500'%3E%3Cstyle%3E @keyframes float %7B 0%25 %7Btransform: translateY(0px);%7D 50%25 %7Btransform: translateY(-20px);%7D 100%25 %7Btransform: translateY(0px);%7D %7D .floating %7B animation: float 6s ease-in-out infinite; %7D %3C/style%3E%3Crect width='100%25' height='100%25' fill='%230f172a'/%3E%3Cg%3E%3Ccircle cx='250' cy='250' r='150' fill='%23312e81' opacity='0.5'/%3E%3C/g%3E%3Cg class='floating'%3E%3Cpath d='M250 120 L350 180 L350 300 L250 360 L150 300 L150 180 Z' fill='none' stroke='%238b5cf6' stroke-width='4' opacity='0.8'/%3E%3Ccircle cx='250' cy='120' r='10' fill='%23c4b5fd'/%3E%3Ccircle cx='350' cy='180' r='10' fill='%23c4b5fd'/%3E%3Ccircle cx='350' cy='300' r='10' fill='%23c4b5fd'/%3E%3Ccircle cx='250' cy='360' r='10' fill='%23c4b5fd'/%3E%3Ccircle cx='150' cy='300' r='10' fill='%23c4b5fd'/%3E%3Ccircle cx='150' cy='180' r='10' fill='%23c4b5fd'/%3E%3C/g%3E%3Cg class='floating' style='animation-delay: -2s;'%3E%3Cpath d='M250 170 L300 200 L300 260 L250 290 L200 260 L200 200 Z' fill='%237c3aed' opacity='0.4'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M175 175 L140 225 L175 275 L250 275 L285 225 L250 175 Z' fill='none' stroke='%23a78bfa' stroke-width='2' opacity='0.6' transform='translate(30, 0)'/%3E%3Cpath d='M275 175 L240 225 L275 275 L350 275 L385 225 L350 175 Z' fill='none' stroke='%23a78bfa' stroke-width='2' opacity='0.3' transform='translate(-30, 0) scale(-1, 1)'/%3E%3C/g%3E%3Cg%3E%3Ctext x='250' y='400' text-anchor='middle' fill='%23e0e7ff' font-family='Arial' font-size='16' font-weight='bold'%3EJoin Our Community%3C/text%3E%3C/g%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -230,7 +230,7 @@ body {
         display: none;
     }
     
-    .login-section {
+    .registration-section {
         padding: 1.5rem;
     }
 }
