@@ -5,7 +5,7 @@
       "email": "stevven.helmy@gmail.com",
       "name": "user1",
       "pass": "MTIz",
-      "role": "seller"
+      "role": "admin"
     },
     {
       "id": "6cbbf2fd-3cfb-4a6f-9db5-408eb9919488",
@@ -15,11 +15,11 @@
       "role": "buyer"
     },
     {
-      "id": "aff74973-eb2c-4c41-8ca7-d16eaa498f1c",
+      "id": "d72cdde9-31be-471a-9376-6158c8557e14",
       "name": "user",
-      "email": "user2@user.com",
+      "email": "user@user.com",
       "pass": "MTIz",
-      "role": "buyer"
+      "role": "admin"
     }
   ]
 }

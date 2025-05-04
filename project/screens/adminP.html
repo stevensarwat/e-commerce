@@ -75,10 +75,9 @@
           <i class="fas fa-plus"></i> Add New User
         </button>
       </div>
-      
+
       <!-- Table -->
       <div class="content-card">
-        
         <!-- table-header | title / search -->
         <div class="table-header">
           <h2 class="table-title">All Users</h2>
@@ -157,6 +156,9 @@
               <span id="emailError" class="error-message"
                 >Please enter a valid email address</span
               >
+              <span id="emailTakenError" class="error-message"
+                >this email is taken</span
+              >
             </div>
             <div class="form-group">
               <label for="password">Password</label>
@@ -173,19 +175,12 @@
             <div class="form-group">
               <label for="role">User Role</label>
               <select id="role" class="form-select">
-                <option value="Buyer">Buyer</option>
+                <option value="buyer">Buyer</option>
                 <option value="admin">Admin</option>
                 <option value="seller">Seller</option>
               </select>
               <span id="roleError" class="error-message"
                 >Please select a role</span
-              >
-            </div>
-            <div class="form-group">
-            <div class="form-group checkbox-group">
-              <input type="checkbox" id="sendEmail" />
-              <label for="sendEmail"
-                >Send welcome email with login credentials</label
               >
             </div>
           </form>

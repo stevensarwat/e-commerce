@@ -1,6 +1,8 @@
 import {db} from './dbGate.js'
 let mainURL = 'http://localhost:3000/users';
 
+
+////////////////////////////////////////////////////////////////////// main functions
 export const get = async function () {
     let users = []
     let data = await db(mainURL, 'GET');
@@ -34,6 +36,8 @@ const update = async function (user) {
     });
 }
 
+////////////////////////////////////////////////////////////////////// derived functions
+
 export const isFound = async function (email, pass) {
     let data = await get();
     for (const user of data) {
@@ -59,7 +63,7 @@ const getUserById = async function (id) {
 export const getUserByemail = async function (email) {
     let data = await get();
     for (const user of data) {
-        if(user.email == email){
+        if(user.email == email.trim()){
             let u = new User(user.name, user.email, user.pass, user.role, user.id)
             return u;
         }
@@ -71,6 +75,17 @@ export const addUser = async function (user) {
     if(user instanceof User)
     await post(user);
 }
+
+export const UpdateUser = async function (user) {
+    if(user instanceof User)
+    await update(user);
+}
+
+export const DeleteUser = async function (user) {
+    if(user instanceof User)
+    await del(user);
+}
+
 export const login= function (usr) {
     localStorage.setItem('login', btoa(usr.id));
 }
@@ -89,7 +104,7 @@ export const isLogged= async function () {
 }
 
 
-
+////////////////////////////////////////////////////////////////////// class
 export class User {
     id;
     name; 

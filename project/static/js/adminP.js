@@ -1,15 +1,5 @@
-import {User, get, logout} from './db/userDB.js'
+import {User, get, addUser, UpdateUser, DeleteUser, logout, getUserByemail} from './db/userDB.js'
 let users = []
-
-window.addEventListener('load', async function(e) {
-    users = await get();
-    renderUsersTable();
-
-    logOut.addEventListener('click', function (e) {
-        logout();
-        window.location.href = '../screens/login.html';
-    })
-})
 
   //Sidebar   
   const logOut = document.getElementById("logOut");
@@ -19,9 +9,9 @@ window.addEventListener('load', async function(e) {
   const deleteModal = document.getElementById("deleteModal");
   const addUserBtn = document.getElementById("addUserBtn");
   const modalTitle = document.getElementById("modalTitle");
-  const userForm = document.getElementById("userForm");
-  const usersTableBody = document.getElementById("usersTableBody");
-  const saveUserBtn = document.getElementById("saveUserBtn");
+  const userForm = document.getElementById("userForm"); //userModal from
+  const usersTableBody = document.getElementById("usersTableBody"); //where generate the body of the table
+  const saveUserBtn = document.getElementById("saveUserBtn"); //userModal from save btn
   const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
 
   const nameInput = document.getElementById("name");
@@ -30,6 +20,7 @@ window.addEventListener('load', async function(e) {
   const roleInput = document.getElementById("role");
 
   const nameError = document.getElementById("nameError");
+  const emailTakenError = document.getElementById("emailTakenError");
   const emailError = document.getElementById("emailError");
   const passwordError = document.getElementById("passwordError");
   const roleError = document.getElementById("roleError");
@@ -54,30 +45,44 @@ window.addEventListener('load', async function(e) {
     },
   };
 
-  // Set up validation for each field
-  Object.keys(formFields).forEach((fieldName) => {
-    const input = document.getElementById(fieldName);
-    const field = formFields[fieldName];
+  window.addEventListener('load', async function(e) {
+    await renderUsersTable();
 
-    input.addEventListener("input", function () {
-      let isValid;
+    logOut.addEventListener('click', function (e) {
+        logout();
+        window.location.href = '../screens/login.html';
+    })
 
-      if (field.regex) {
-        isValid = field.regex.test(this.value);
-      } else if (field.validate) {
-        isValid = field.validate(this.value);
-      }
+        // Set up validation for each field
+        Object.keys(formFields).forEach((fieldName) => {
+            const input = document.getElementById(fieldName);
+            const field = formFields[fieldName];
 
-      if (isValid || this.value === "") {
-        field.error.style.display = "none";
-      } else {
-        field.error.style.display = "block";
-      }
-    });
-  });
+            input.addEventListener("input", function () {
+                let isValid;
+
+                if (field.regex) {
+                isValid = field.regex.test(this.value);
+                } else if (field.validate) {
+                isValid = field.validate(this.value);
+                }
+
+                if (isValid || this.value === "") {
+                field.error.style.display = "none";
+                } else {
+                field.error.style.display = "block";
+                }
+            });
+
+            emailInput.addEventListener("input", function () {
+                emailTakenError.style.display = 'none';
+            });
+        });
+})
 
   // Initialize table with user data
-  function renderUsersTable() {
+  async function renderUsersTable() {
+    users = await get();
     usersTableBody.innerHTML = "";
 
     users.forEach((user) => {
@@ -86,7 +91,7 @@ window.addEventListener('load', async function(e) {
       tr.innerHTML = `
                 <td>${user.name}</td>
                 <td>${user.email}</td>
-                <td>${capitalizeFirstLetter(user.role)}</td>
+                <td>${user.role}</td>
                 <td>
                     <div class="action-btns">
                         <button class="btn btn-sm btn-outline edit-btn" data-id="${
@@ -109,7 +114,7 @@ window.addEventListener('load', async function(e) {
     // Add event listeners to the edit and delete buttons
     document.querySelectorAll(".edit-btn").forEach((btn) => {
       btn.addEventListener("click", function () {
-        const userId = this.getAttribute("data-id");
+        const userId = this.getAttribute("data-id"); //we added custom attribute - we made it here
         openEditUserModal(userId);
       });
     });
@@ -126,7 +131,7 @@ window.addEventListener('load', async function(e) {
   function openAddUserModal() {
     modalTitle.textContent = "Add New User";
     userForm.reset();
-    document.getElementById("userId").value = "";
+    document.getElementById("userId").value = ""; //because this is add new not update
 
     // Clear error messages
     document.querySelectorAll(".error-message").forEach((el) => {
@@ -139,14 +144,16 @@ window.addEventListener('load', async function(e) {
 
   // Open modal for editing a user
   function openEditUserModal(userId) {
+    //get the user
     const user = users.find((u) => u.id == userId);
-    if (!user) return;
+    // if (!user) return;
 
+    //complete user informations
     modalTitle.textContent = "Edit User";
     document.getElementById("userId").value = user.id;
     nameInput.value = user.name;
     emailInput.value = user.email;
-    passwordInput.value = ""; // Don't show password for security
+    passwordInput.value = atob(user.pass);
     roleInput.value = user.role;
 
     // Clear error messages
@@ -161,7 +168,7 @@ window.addEventListener('load', async function(e) {
   // Open delete confirmation modal
   function openDeleteModal(userId) {
     const user = users.find((u) => u.id == userId);
-    if (!user) return;
+    // if (!user) return;
 
     document.getElementById("deleteUserId").value = userId;
     deleteModal.classList.add("active");
@@ -173,92 +180,45 @@ window.addEventListener('load', async function(e) {
     deleteModal.classList.remove("active");
   }
 
-  // Validate form
-  function validateForm() {
-    let isValid = true;
-
-    Object.keys(formFields).forEach((fieldName) => {
-      const input = document.getElementById(fieldName);
-      const field = formFields[fieldName];
-      let fieldValid;
-
-      if (field.regex) {
-        fieldValid = field.regex.test(input.value);
-      } else if (field.validate) {
-        fieldValid = field.validate(input.value);
-      }
-
-      if (!fieldValid) {
-        field.error.style.display = "block";
-        isValid = false;
-      } else {
-        field.error.style.display = "none";
-      }
-    });
-
-    // If editing, don't require password
-    const userId = document.getElementById("userId").value;
-    if (userId && passwordInput.value === "") {
-      passwordError.style.display = "none";
-      isValid = true;
-    }
-
-    return isValid;
-  }
-
   // Save user (add or update)
-  function saveUser() {
-    if (!validateForm()) return;
-
+  async function saveUser() {
+ 
     const userId = document.getElementById("userId").value;
-    const user = {
-      name: nameInput.value,
-      email: emailInput.value,
-      role: roleInput.value,
-    };
-
-    if (passwordInput.value) {
-      // In a real app, we'd hash the password here
-      user.pass = btoa(passwordInput.value);
-    }
+    let u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value)
 
     if (userId) {
-      // Update existing user
-      const index = users.findIndex((u) => u.id == userId);
-      if (index !== -1) {
-        // Keep the password if not changed
-        if (!user.pass) {
-          user.pass = users[index].pass;
-        }
+        u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value, userId)
 
-        user.id = parseInt(userId);
-        users[index] = user;
+        //update user function
+        UpdateUser(u);
         showToast("success", "Success!", "User updated successfully");
-      }
     } else {
+        
       // Add new user
-      user.id =
-        users.length > 0 ? Math.max(...users.map((u) => u.id)) + 1 : 1;
-      users.push(user);
+      if(await getUserByemail(emailInput.value) instanceof User)
+    {
+        // emailInput.setCustomValidity('this email is taken try to login');
+        emailTakenError.style.display = 'block';
+        return;   
+    }
+      await addUser(u);
+
       showToast("success", "Success!", "User added successfully");
     }
 
     closeModals();
-    renderUsersTable();
+    
+    await renderUsersTable();
   }
 
   // Delete user
-  function deleteUser() {
+  async function deleteUser() {
     const userId = document.getElementById("deleteUserId").value;
-    const index = users.findIndex((u) => u.id == userId);
-
-    if (index !== -1) {
-      users.splice(index, 1);
-      showToast("success", "Success!", "User deleted successfully");
-    }
-
+    let u = new User('','','','',userId)
+    DeleteUser(u)
+    showToast("success", "Success!", "User deleted successfully");
     closeModals();
-    renderUsersTable();
+    await renderUsersTable();
   }
 
   // Show toast notification
@@ -301,11 +261,6 @@ window.addEventListener('load', async function(e) {
       });
   }
 
-  // Helper function to capitalize first letter
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
   // Event Listeners
   addUserBtn.addEventListener("click", openAddUserModal);
 
@@ -315,19 +270,16 @@ window.addEventListener('load', async function(e) {
   });
 
   userModal.addEventListener("click", function (e) {
-    if (e.target === userModal) {
+    if (e.target === userModal) { //it's tack the full width and hights
       closeModals();
     }
   });
 
   deleteModal.addEventListener("click", function (e) {
-    if (e.target === deleteModal) {
+    if (e.target === deleteModal) { //it's tack the full width and hights
       closeModals();
     }
   });
 
-  saveUserBtn.addEventListener("click", saveUser);
-  confirmDeleteBtn.addEventListener("click", deleteUser);
-
-  // Initialize the users table
-  renderUsersTable();
+  saveUserBtn.addEventListener("click", await saveUser);
+  confirmDeleteBtn.addEventListener("click", await deleteUser);
