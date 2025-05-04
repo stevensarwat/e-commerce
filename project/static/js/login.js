@@ -1,10 +1,8 @@
-import {User, isFound, getUserById} from './db/userDB.js'
+import {User, isFound, login, isLogged} from './db/userDB.js'
 
 window.addEventListener('load', async function() {
-    let id = this.localStorage.getItem('login');
-    if(id != null && await getUserById(id) != null){
-        window.location.href = '../index.html';
-    }
+    await isLogged();
+    
     // Login form handling
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
@@ -53,8 +51,8 @@ window.addEventListener('load', async function() {
         if ( u instanceof User)   {
             
             //success
-            if(remember.checked)localStorage.setItem('login', btoa(u.id));
-            window.location.href = '../index.html';
+            if(remember.checked)login(u);
+            window.location.href = '../screens/adminP.html'; //change later
 
         } else {
             alert('Invalid credentials. Please try again.');

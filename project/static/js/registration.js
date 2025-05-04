@@ -1,10 +1,7 @@
-import {User, addUser, getUserByemail, getUserById} from './db/userDB.js'
+import {User, addUser, getUserByemail, isLogged} from './db/userDB.js'
 
 window.addEventListener('load', async function() {
-    let id = this.localStorage.getItem('login');
-    if(id != null && await getUserById(id) != null){
-        window.location.href = '../index.html';
-    }
+    await isLogged();
     const registrationForm = document.getElementById('registrationForm');
     const email = document.getElementById('email');
     const emailError = document.getElementById('emailError');
