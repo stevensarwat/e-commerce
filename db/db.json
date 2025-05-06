@@ -27,6 +27,20 @@
       "email": "zarif@gmail.com",
       "pass": "MTk5Nw==",
       "role": "buyer"
+    },
+    {
+      "id": "dd183cff-77db-4375-b3d3-894344613ef1",
+      "name": "kareem",
+      "email": "zzarif@gmail.com",
+      "pass": "MTk5Nw==",
+      "role": "buyer"
+    },
+    {
+      "id": "e810ee5e-c365-4810-8dd3-e6bff8b00c03",
+      "name": "johnAccount2024",
+      "email": "aarif@gmail.com",
+      "pass": "MTk5Nw==",
+      "role": "buyer"
     }
   ],
   "products": [
