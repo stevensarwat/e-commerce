@@ -10,35 +10,42 @@
     {
       "id": "90cff48a-7dd5-4add-bef0-36b07ee49dfa",
       "name": "kareem",
-      "email": "stevven.helmy@gmail.com",
+      "email": "adminadmin@gmail.com",
       "pass": "MTIz",
       "role": "admin"
+    },
+    {
+      "id": "5232399a-ca8d-42df-a67e-6caa29fb0589",
+      "name": "KAREEM ZARIF SABER",
+      "email": "eng.kareem.zarif@gmail.com",
+      "pass": "MTExMg==",
+      "role": "buyer"
     }
   ],
   "products": [
     {
-      "id":"545",
-      "name":"product1", 
-      "price":30.5, 
-      "category":"books", 
-      "images":"D://...", 
-      "sellerId":"01254"
+      "id": "545",
+      "name": "product1",
+      "price": 30.5,
+      "category": "books",
+      "images": "D://...",
+      "sellerId": "01254"
     },
     {
-      "id":"545",
-      "name":"product1", 
-      "price":30.5, 
-      "category":"books", 
-      "images":"D://...", 
-      "sellerId":"01254"
+      "id": "545",
+      "name": "product1",
+      "price": 30.5,
+      "category": "books",
+      "images": "D://...",
+      "sellerId": "01254"
     },
     {
-      "id":"545",
-      "name":"product1", 
-      "price":30.5, 
-      "category":"books", 
-      "images":"D://...", 
-      "sellerId":"01254"
+      "id": "545",
+      "name": "product1",
+      "price": 30.5,
+      "category": "books",
+      "images": "D://...",
+      "sellerId": "01254"
     }
   ]
 }

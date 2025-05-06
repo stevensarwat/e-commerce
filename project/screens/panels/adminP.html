@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel - Users Management</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="../../static/css/adminP.css" />
     <script type="module" src="../../static/js/adminP.js"></script>
-    <!-- Icon font -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,43 +22,43 @@
       </div>
       <ul class="nav-menu">
         <li class="nav-item">
-          <div href="#" class="nav-link active">
+          <div class="nav-link active" data-tab="dashboard">
             <i class="fas fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </div>
         </li>
         <li class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link" data-tab="users">
             <i class="fas fa-users"></i>
             <span>Users</span>
           </div>
         </li>
         <li class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link" data-tab="products">
             <i class="fas fa-box"></i>
             <span>Products</span>
           </div>
         </li>
         <li class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link" data-tab="orders">
             <i class="fas fa-shopping-cart"></i>
             <span>Orders</span>
           </div>
         </li>
         <li class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link" data-tab="analytics">
             <i class="fas fa-chart-bar"></i>
             <span>Analytics</span>
           </div>
         </li>
         <li class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link" data-tab="settings">
             <i class="fas fa-cog"></i>
             <span>Settings</span>
           </div>
         </li>
         <li class="nav-item">
-          <div id="logOut" class="nav-link">
+          <div id="logOut" class="nav-link" data-tab="logout">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
           </div>
@@ -69,56 +68,95 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      <div class="header">
-        <h1>Users Management</h1>
-        <button id="addUserBtn" class="btn btn-primary">
-          <i class="fas fa-plus"></i> Add New User
-        </button>
+      <div id="dashboard" class="content-section active">
+        <div class="header">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="content-card">
+          <h2>Welcome, Admin</h2>
+          <p>Manage your users, products, and orders from here.</p>
+        </div>
       </div>
 
-      <!-- Table -->
-      <div class="content-card">
-        <!-- table-header | title / search -->
-        <div class="table-header">
-          <h2 class="table-title">All Users</h2>
-          <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search users..."
-            />
+      <div id="users" class="content-section">
+        <div class="header">
+          <h1>Users Management</h1>
+          <button id="addUserBtn" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add New User
+          </button>
+        </div>
+        <div class="content-card">
+          <div class="table-header">
+            <h2 class="table-title">All Users</h2>
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search users..."
+              />
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- Table rows will be dynamically generated -->
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
           </div>
         </div>
+      </div>
 
-        <!-- table-header | title / search -->
-        <div class="table-container">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="usersTableBody">
-              <!-- Table rows will be dynamically generated -->
-            </tbody>
-          </table>
+      <div id="products" class="content-section">
+        <div class="header">
+          <h1>Products Management</h1>
         </div>
+        <div class="content-card">
+          <h2>All Products</h2>
+          <p>Product management content goes here.</p>
+        </div>
+      </div>
 
-        <!-- pagination -->
-        <div class="pagination">
-          <!-- <button class="page-btn">
-            <i class="fas fa-chevron-left"></i>
-          </button> -->
-          <button class="page-btn active">1</button>
-          <button class="page-btn">2</button>
-          <button class="page-btn">3</button>
-          <!-- <button class="page-btn">
-            <i class="fas fa-chevron-right"></i>
-          </button> -->
+      <div id="orders" class="content-section">
+        <div class="header">
+          <h1>Orders Management</h1>
+        </div>
+        <div class="content-card">
+          <h2>All Orders</h2>
+          <p>Order management content goes here.</p>
+        </div>
+      </div>
+
+      <div id="analytics" class="content-section">
+        <div class="header">
+          <h1>Analytics</h1>
+        </div>
+        <div class="content-card">
+          <h2>Reports</h2>
+          <p>Analytics content goes here.</p>
+        </div>
+      </div>
+
+      <div id="settings" class="content-section">
+        <div class="header">
+          <h1>Settings</h1>
+        </div>
+        <div class="content-card">
+          <h2>Configuration</h2>
+          <p>Settings content goes here.</p>
         </div>
       </div>
     </main>
@@ -128,7 +166,7 @@
       <div class="modal">
         <div class="modal-header">
           <h3 id="modalTitle" class="modal-title">Add New User</h3>
-          <button class="close-modal">&times;</button>
+          <button class="close-modal">×</button>
         </div>
         <div class="modal-body">
           <form id="userForm">
@@ -157,7 +195,7 @@
                 >Please enter a valid email address</span
               >
               <span id="emailTakenError" class="error-message"
-                >this email is taken</span
+                >This email is taken</span
               >
             </div>
             <div class="form-group">
@@ -197,7 +235,7 @@
       <div class="modal">
         <div class="modal-header">
           <h3 class="modal-title">Confirm Delete</h3>
-          <button class="close-modal">&times;</button>
+          <button class="close-modal">×</button>
         </div>
         <div class="modal-body">
           <p>
@@ -217,5 +255,6 @@
 
     <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
+
   </body>
 </html>
