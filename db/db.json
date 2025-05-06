@@ -3,23 +3,42 @@
     {
       "id": "012",
       "email": "stevven.helmy@gmail.com",
-      "name": "user1",
+      "name": "stevn",
       "pass": "MTIz",
       "role": "admin"
     },
     {
-      "id": "6cbbf2fd-3cfb-4a6f-9db5-408eb9919488",
-      "name": "steven",
-      "email": "user@gmail.com",
-      "pass": "MTIz",
-      "role": "buyer"
-    },
-    {
-      "id": "d72cdde9-31be-471a-9376-6158c8557e14",
-      "name": "user",
-      "email": "user@user.com",
+      "id": "90cff48a-7dd5-4add-bef0-36b07ee49dfa",
+      "name": "kareem",
+      "email": "stevven.helmy@gmail.com",
       "pass": "MTIz",
       "role": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id":"545",
+      "name":"product1", 
+      "price":30.5, 
+      "category":"books", 
+      "images":"D://...", 
+      "sellerId":"01254"
+    },
+    {
+      "id":"545",
+      "name":"product1", 
+      "price":30.5, 
+      "category":"books", 
+      "images":"D://...", 
+      "sellerId":"01254"
+    },
+    {
+      "id":"545",
+      "name":"product1", 
+      "price":30.5, 
+      "category":"books", 
+      "images":"D://...", 
+      "sellerId":"01254"
     }
   ]
 }
