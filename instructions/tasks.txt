@@ -1,8 +1,9 @@
+- update email taken
 - admin panal refactor add forms 
 - pagination & search
 - aside => change content
-- dynamic table
-- change all page dynamicly for every user role 
+- dynamic table --delay
 - add permitions (pages, actions)
+- change all page dynamicly for every user role 
 - product and order module
-- user pages (index - products - add to cart - checkout - track order)
+- user pages (index - products - cart - checkout - track order)

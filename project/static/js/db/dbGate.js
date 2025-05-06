@@ -7,4 +7,3 @@ export const db = async function (url, method, data=null) {
     });
     return response.json();
 }
-

@@ -52,7 +52,7 @@ window.addEventListener('load', async function() {
             
             //success
             if(remember.checked)login(u);
-            window.location.href = '../screens/adminP.html'; //change later
+            window.location.href = '../screens/panels/adminP.html'; //change later
 
         } else {
             alert('Invalid credentials. Please try again.');

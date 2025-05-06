@@ -52,7 +52,7 @@ export const isFound = async function (email, pass) {
 const getUserById = async function (id) {
     let data = await get();
     for (const user of data) {
-        if(user.id == atob(id)){
+        if(user.id == id){
             let u = new User(user.name, user.email, user.pass, user.role, user.id)
             return u;
         }
@@ -60,9 +60,10 @@ const getUserById = async function (id) {
     return null;
 }
 
-export const getUserByemail = async function (email) {
+export const getUserByemail = async function (email, exclude) {
     let data = await get();
     for (const user of data) {
+        if(user.email === exclude) continue;
         if(user.email == email.trim()){
             let u = new User(user.name, user.email, user.pass, user.role, user.id)
             return u;
@@ -86,7 +87,7 @@ export const DeleteUser = async function (user) {
     await del(user);
 }
 
-export const login= function (usr) {
+export const login = function (usr) {
     localStorage.setItem('login', btoa(usr.id));
 }
 
@@ -96,8 +97,8 @@ export const logout= function () {
 
 export const isLogged= async function () {
     let id = localStorage.getItem('login');
-    if(id != null && await getUserById(id) != null){
-        window.location.href = '../index.html';
+    if(id != null && await getUserById(atob(id)) != null){
+        window.location.href = '../screens/panels/adminP.html';
         return true;
     }
     return false;

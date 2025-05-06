@@ -107,7 +107,6 @@ let users = []
                     </div>
                 </td>
             `;
-
       usersTableBody.appendChild(tr);
     });
 
@@ -186,6 +185,12 @@ let users = []
     const userId = document.getElementById("userId").value;
     let u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value)
 
+    if(await getUserByemail(emailInput.value, u.email) instanceof User)
+      {
+          // emailInput.setCustomValidity('this email is taken try to login');
+          emailTakenError.style.display = 'block';
+          return;   
+      }
     if (userId) {
         u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value, userId)
 
@@ -195,12 +200,6 @@ let users = []
     } else {
         
       // Add new user
-      if(await getUserByemail(emailInput.value) instanceof User)
-    {
-        // emailInput.setCustomValidity('this email is taken try to login');
-        emailTakenError.style.display = 'block';
-        return;   
-    }
       await addUser(u);
 
       showToast("success", "Success!", "User added successfully");

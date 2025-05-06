@@ -73,7 +73,7 @@ window.addEventListener('load', async function() {
             role: document.getElementById('role').value
         };
         let u = new User(formData.name, formData.email, formData.pass, formData.role)
-        if(await getUserByemail(formData.email) == null)
+        if(await getUserByemail(formData.email, '') == null)
         {
             await addUser(u);
             // success
