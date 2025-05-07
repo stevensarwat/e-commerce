@@ -41,6 +41,13 @@
       "email": "aarif@gmail.com",
       "pass": "MTk5Nw==",
       "role": "buyer"
+    },
+    {
+      "id": "db59e3e1-c947-4922-9927-cf711af4f956",
+      "name": "",
+      "email": "",
+      "pass": "",
+      "role": "buyer"
     }
   ],
   "products": [

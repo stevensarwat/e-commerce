@@ -87,7 +87,7 @@ let searchUsers = []
 
       // Close modal when clicking on close button or outside the modal
       document.querySelectorAll(".close-modal").forEach((btn) => {
-      btn.addEventListener("click", closeModals);
+        btn.addEventListener("click", closeModals);
       });
 
       userModal.addEventListener("click", function (e) {
