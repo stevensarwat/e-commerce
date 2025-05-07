@@ -48,9 +48,6 @@ let searchUsers = []
     await Events();
   }
 
-  // window.addEventListener('load', async function(e) {
-  //   await init()
-  // });
   // all events in the page 
   const Events = async function(){
 
@@ -294,4 +291,11 @@ let oldemail='';
   }
 
 
-  await init(); // must put in the end of the file
+  //await init(); // must put in the end of the file
+  if(document.readyState == "complete"){
+    await init()
+  }else{
+    window.addEventListener('load', async function(e) {
+      await init()
+    });
+  }

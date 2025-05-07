@@ -2,15 +2,15 @@
   "users": [
     {
       "id": "90cff48a-7dd5-4add-bef0-36b07ee49da2",
-      "email": "stevven.helmy@gmail.com",
       "name": "stevn",
+      "email": "ssstevven.helmy@gmail.com",
       "pass": "MTIz",
       "role": "admin"
     },
     {
       "id": "90cff48a-7dd5-4add-bef0-36b07ee49dfa",
       "name": "kareem",
-      "email": "adminadmin@gmail.com",
+      "email": "aadminadmin@gmail.com",
       "pass": "MTIz",
       "role": "admin"
     },

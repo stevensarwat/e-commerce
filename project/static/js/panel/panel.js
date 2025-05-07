@@ -21,7 +21,7 @@ window.addEventListener('load', function(e) {
   });
   this.document.querySelectorAll('.nav-link').forEach(element => {
       element.addEventListener('click',function() {
-        location.reload(true);
+        // location.reload(true);
       })
     }); 
   renderPage(); //for intail state
@@ -62,7 +62,7 @@ async function renderPage() {
       let newScript = document.createElement('script');
       newScript.type = "module";
       newScript.className = "included";
-      newScript.src = el.src ;
+      newScript.src = el.src + "?v="+Date.now() ;
       document.head.appendChild(newScript);
     }
   } catch (error) {     
@@ -70,10 +70,4 @@ async function renderPage() {
       `<h1>404</h1><p>Page not found!</p><p>${error}</p>`;
   }
 }
-
-const aa1 = function () {
-  console.log('aa');
-  
-}
-
 /////////////////////////////////////////////////
