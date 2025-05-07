@@ -4,7 +4,7 @@ products, orders
 
 database:
 user: (id, name, email, pass, role)
-product: (id, name, price, category, images, sellerId)
+cat: (id, name, price, cat, images, sellerId)
 category: (name)                                                               --k=> need id
 order: (id, userID, orderDetail[--orderId--, productId, count, status, sellerId])   --k=>need price 
 

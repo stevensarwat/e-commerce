@@ -1,53 +1,42 @@
 {
   "users": [
     {
-      "id": "90cff48a-7dd5-4add-bef0-36b07ee49da2",
-      "name": "stevn",
-      "email": "ssstevven.helmy@gmail.com",
-      "pass": "MTIz",
-      "role": "admin"
-    },
-    {
       "id": "90cff48a-7dd5-4add-bef0-36b07ee49dfa",
       "name": "kareem",
       "email": "aadminadmin@gmail.com",
       "pass": "MTIz",
-      "role": "admin"
+      "role": "admin",
+      "orders": [
+        {
+          "orderID": "90cff48a-87d5-4add-bef0-36b07ee49dfa",
+          "productId": 1,
+          "quantity": 5,
+          "status": "shipped",
+          "sellerId": "01254"
+        },
+        {
+          "orderID": "90cff48a-87d5-4adf-bef0-36b07ee49dfa",
+          "productId": 1,
+          "quantity": 5,
+          "status": "delivered",
+          "sellerId": "01254"
+        },
+        {
+          "orderID": "90cff48a-87d5-4add-bef0-36as7ee49dfa",
+          "productId": 1,
+          "quantity": 5,
+          "status": "shipped",
+          "sellerId": "01254"
+        }
+      ]
     },
     {
-      "id": "5232399a-ca8d-42df-a67e-6caa29fb0589",
-      "name": "KAREEM ZARIF SABER",
-      "email": "eng.kareem.zarif@gmail.com",
-      "pass": "MTExMg==",
-      "role": "buyer"
-    },
-    {
-      "id": "fcaa2b2b-5a13-4858-ab16-20da6f75db84",
-      "name": "hjm,gm",
-      "email": "zarif@gmail.com",
-      "pass": "MTk5Nw==",
-      "role": "buyer"
-    },
-    {
-      "id": "dd183cff-77db-4375-b3d3-894344613ef1",
-      "name": "kareem",
-      "email": "zzarif@gmail.com",
-      "pass": "MTk5Nw==",
-      "role": "buyer"
-    },
-    {
-      "id": "e810ee5e-c365-4810-8dd3-e6bff8b00c03",
-      "name": "johnAccount2024",
-      "email": "aarif@gmail.com",
-      "pass": "MTk5Nw==",
-      "role": "buyer"
-    },
-    {
-      "id": "db59e3e1-c947-4922-9927-cf711af4f956",
-      "name": "",
-      "email": "",
-      "pass": "",
-      "role": "buyer"
+      "id": "622ca9a7-f639-4eff-84fd-1ded635e8d74",
+      "name": "steven",
+      "email": "stevven.helmy@gmail.com",
+      "pass": "MTIz",
+      "role": "buyer",
+      "orders": []
     }
   ],
   "products": [
@@ -55,23 +44,31 @@
       "id": "545",
       "name": "product1",
       "price": 30.5,
-      "category": "books",
+      "cat": "books",
       "images": "D://...",
       "sellerId": "01254"
     },
     {
-      "id": "545",
-      "name": "product1",
+      "id": "546",
+      "name": "product2",
       "price": 30.5,
-      "category": "books",
+      "cat": "books",
       "images": "D://...",
       "sellerId": "01254"
     },
     {
-      "id": "545",
-      "name": "product1",
+      "id": "547",
+      "name": "product3",
       "price": 30.5,
-      "category": "books",
+      "cat": "books",
+      "images": "D://...",
+      "sellerId": "01254"
+    },
+    {
+      "id": "548",
+      "name": "product4",
+      "price": 30.5,
+      "cat": "books",
       "images": "D://...",
       "sellerId": "01254"
     }

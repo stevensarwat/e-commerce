@@ -1,39 +1,30 @@
-import {db} from './dbGate.js'
+import * as dbGate from './dbGate.js'
 let mainURL = 'http://localhost:3000/users';
 
 
 ////////////////////////////////////////////////////////////////////// main functions
-export const get = async function () {
+export const get = async function (id =null) {
     let users = []
-    let data = await db(mainURL, 'GET');
+    let data = await dbGate.get(mainURL, id);
     for (const el of data) {
         users.push(new User(el.name, el.email, atob(el.pass), el.role, el.id))
     }
     return users;
 }
 
-const post = async function (user) {
-    await db(mainURL, 'POST', user).then((data) => {
-        console.log(data);
-    }).catch((error) => {
-        console.error('Error:', error);
-    });
+export const addUser = async function (user) {
+    if(user instanceof User)
+        await dbGate.post(mainURL,user)
 }
 
-const del = async function (user) {
-    await db(mainURL+`/${user.id}`, 'DELETE').then((data) => {
-        console.log(data);
-    }).catch((error) => {
-        console.error('Error:', error);
-    });
+export const UpdateUser = async function (user) {
+    if(user instanceof User)
+        await dbGate.update(mainURL,user.id,user)
 }
 
-const update = async function (user) {
-    await db(mainURL+`/${user.id}`, 'PUT', user).then((data) => {
-        console.log(data);
-    }).catch((error) => {
-        console.error('Error:', error);
-    });
+export const DeleteUser = async function (user) {
+    if(user instanceof User)
+        await dbGate.del(mainURL,user.id)
 }
 
 ////////////////////////////////////////////////////////////////////// derived functions
@@ -50,11 +41,28 @@ export const isFound = async function (email, pass) {
 }
 
 const getUserById = async function (id) {
+    let data = await get(id);
+    // for (const user of data) {
+    //     if(user.id == id){
+    //         let u = new User(user.name, user.email, user.pass, user.role, user.id)
+    //         return u;
+    //     }
+    // }
+    if(data){
+        let user = data[0];
+        return new User(user.name, user.email, user.pass, user.role, user.id)
+    }
+    return null;
+}
+
+export const getUserByOrderId = async function (orderID) {
     let data = await get();
     for (const user of data) {
-        if(user.id == id){
-            let u = new User(user.name, user.email, user.pass, user.role, user.id)
-            return u;
+        for (const order of user.orders) {
+            if(order.orderID == orderID){
+                let u = new User(user.name, user.email, user.pass, user.role, user.id)
+                return u;
+            }
         }
     }
     return null;
@@ -70,21 +78,6 @@ export const getUserByemail = async function (email, exclude) {
         }
     }
     return null;
-}
-
-export const addUser = async function (user) {
-    if(user instanceof User)
-    await post(user);
-}
-
-export const UpdateUser = async function (user) {
-    if(user instanceof User)
-    await update(user);
-}
-
-export const DeleteUser = async function (user) {
-    if(user instanceof User)
-    await del(user);
 }
 
 export const login = function (usr) {
@@ -105,7 +98,6 @@ export const isLogged= async function () {
     return false;
 }
 
-
 ////////////////////////////////////////////////////////////////////// class
 export class User {
     id;
@@ -113,12 +105,14 @@ export class User {
     email; 
     pass;
     role; 
+    orders =[];
 
-    constructor(_name, _email, _pass, _role, _id= null) {
+    constructor(_name, _email, _pass, _role, _id= null,_orders=[]) {
         this.id = _id == null?crypto.randomUUID():_id;
         this.name = _name;
         this.email = _email;
         this.pass = btoa(_pass);
         this.role = _role;
+        this.orders = _orders;
     }
 }
