@@ -524,80 +524,12 @@ body {
   accent-color: var(--primary-color);
 }
 
-.checkbox-group label {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-  line-height: 1.4;
-}
-
-/* Toast notification */
-.toast-container {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 1100;
-}
-
-.toast {
-  background-color: var(--card-bg);
-  border-radius: var(--rounded);
-  box-shadow: var(--shadow-lg);
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  min-width: 300px;
-  transform: translateX(100%);
-  transition: all 0.3s ease;
-  animation: slideIn 0.3s forwards;
-}
-
-.toast.success {
-  border-left: 4px solid var(--success-color);
-  background: linear-gradient(to right, rgba(16, 185, 129, 0.1), transparent);
-}
-
-.toast.error {
-  border-left: 4px solid var(--error-color);
-  background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
-}
-
-.toast-icon {
-  margin-right: 0.75rem;
-  font-size: 1.25rem;
-}
-
-.toast.success .toast-icon {
-  color: var(--success-color);
-}
-
-.toast.error .toast-icon {
-  color: var(--error-color);
-}
-
-.toast-content {
-  flex: 1;
-}
-
-.toast-title {
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.toast-message {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.toast-close {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 0.25rem;
-}
+  .checkbox-group label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
 
 @keyframes slideIn {
   to {

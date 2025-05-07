@@ -93,12 +93,13 @@ export const login = function (usr) {
 
 export const logout= function () {
     localStorage.removeItem('login');
+    window.location.href = '../../screens/login.html';
 }
 
 export const isLogged= async function () {
     let id = localStorage.getItem('login');
     if(id != null && await getUserById(atob(id)) != null){
-        window.location.href = '../screens/panels/adminP.html';
+        window.location.href = '../screens/panel/adminP.html';
         return true;
     }
     return false;

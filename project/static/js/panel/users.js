@@ -1,76 +1,105 @@
-import {
-  User,
-  get,
-  addUser,
-  UpdateUser,
-  DeleteUser,
-  logout,
-  getUserByemail,
-} from "./db/userDB.js";
-let users = [];
+import {User, get, addUser, UpdateUser, DeleteUser, getUserByemail} from '../db/userDB.js'
+let users = []
+let searchUsers = []
 
-//Sidebar
-const logOut = document.getElementById("logOut");
-const navLinks = document.querySelectorAll(".nav-link");
-const contentSections = document.querySelectorAll(".content-section");
+  // DOM Elements
+  const userModal = document.getElementById("userModal");
+  const deleteModal = document.getElementById("deleteModal");
+  const addUserBtn = document.getElementById("addUserBtn");
+  const modalTitle = document.getElementById("modalTitle");
+  const userForm = document.getElementById("userForm"); //userModal from
+  const usersTableBody = document.getElementById("usersTableBody"); //where generate the body of the table
+  const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+  const pagination = document.getElementById("pagination");
+  const search = document.getElementById("search-input");
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const selectedTabDataAtt = link.getAttribute("data-tab");
-    // console.log(selectedTabDataAtt);
-    if (selectedTabDataAtt === "logout") {
-      alert("Logging out...");
-      // Add actual logout logic here (e.g., redirect to login page)
-    } else {
-      navLinks.forEach((l) => l.classList.remove("active"));
-      link.classList.add("active");
-      contentSections.forEach((section) => section.classList.remove("active"));
-      const activeSection = document.getElementById(selectedTabDataAtt);
-      if (activeSection) {
-        activeSection.classList.add("active");
-      }
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const roleInput = document.getElementById("role");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
+  const roleError = document.getElementById("roleError");
+
+  // Form field validation
+  const formFields = {
+    name: {
+      regex: /^.{2,}$/,
+      error: nameError,
+    },
+    email: {
+      regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      error: emailError,
+    },
+    password: {
+      regex: /^.{3,}$/,
+      error: passwordError,
+    },
+    role: {
+      validate: (value) => value !== "",
+      error: roleError,
+    },
+  };
+
+  const init =  async function () {
+    await paging();
+    await Events();
+  }
+
+  // window.addEventListener('load', async function(e) {
+  //   await init()
+  // });
+  // all events in the page 
+const Events = async function(){  
+// Set up validation for each field
+  Object.keys(formFields).forEach((fieldName) => {
+    const input = document.getElementById(fieldName);
+    const field = formFields[fieldName];
+
+    input.addEventListener("input", function () {
+        let isValid;
+
+        if (field.regex) {
+        isValid = field.regex.test(this.value);
+        } else if (field.validate) {
+        isValid = field.validate(this.value);
+        }
+
+        if (isValid || this.value === "") {
+        field.error.style.display = "none";
+        } else {
+        field.error.style.display = "block";
+        }
+    });
+
+    emailInput.addEventListener("input", function () {
+      emailInput.setCustomValidity('');
+    });
+  });
+
+  userForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    await saveUser();
+  })
+
+  // Event Listeners
+  addUserBtn.addEventListener("click", openAddUserModal);
+
+  // Close modal when clicking on close button or outside the modal
+  document.querySelectorAll(".close-modal").forEach((btn) => {
+    btn.addEventListener("click", closeModals);
+  });
+
+  userModal.addEventListener("click", function (e) {
+    if (e.target === userModal) { //it's tack the full width and hights
+    closeModals();
     }
   });
-});
-// DOM Elements
-const userModal = document.getElementById("userModal");
-const deleteModal = document.getElementById("deleteModal");
-const addUserBtn = document.getElementById("addUserBtn");
-const modalTitle = document.getElementById("modalTitle");
-const userForm = document.getElementById("userForm"); //userModal from
-const usersTableBody = document.getElementById("usersTableBody"); //where generate the body of the table
-const saveUserBtn = document.getElementById("saveUserBtn"); //userModal from save btn
-const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+    
 
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const roleInput = document.getElementById("role");
 
-const nameError = document.getElementById("nameError");
-const emailTakenError = document.getElementById("emailTakenError");
-const emailError = document.getElementById("emailError");
-const passwordError = document.getElementById("passwordError");
-const roleError = document.getElementById("roleError");
-
-// Form field validation
-const formFields = {
-  name: {
-    regex: /^.{2,}$/,
-    error: nameError,
-  },
-  email: {
-    regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-    error: emailError,
-  },
-  password: {
-    regex: /^.{3,}$/,
-    error: passwordError,
-  },
-  role: {
-    validate: (value) => value !== "",
-    error: roleError,
-  },
 };
 
 window.addEventListener("load", async function (e) {
@@ -258,59 +287,64 @@ function showToast(type, title, message) {
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
 
-  toast.innerHTML = `
-            <div class="toast-icon">
-                <i class="fas fa-${
-                  type === "success" ? "check-circle" : "exclamation-circle"
-                }"></i>
-            </div>
-            <div class="toast-content">
-                <h4 class="toast-title">${title}</h4>
-                <p class="toast-message">${message}</p>
-            </div>
-            <button class="toast-close">&times;</button>
-        `;
+    // Clear error messages
+    document.querySelectorAll(".error-message").forEach((el) => {
+      el.style.display = "none";
+    });
 
-  toastContainer.appendChild(toast);
-
-  // Auto-remove toast after 3 seconds
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    setTimeout(() => {
-      toastContainer.removeChild(toast);
-    }, 300);
-  }, 3000);
-
-  // Close toast on click
-  toast.querySelector(".toast-close").addEventListener("click", function () {
-    toast.style.opacity = "0";
-    setTimeout(() => {
-      toastContainer.removeChild(toast);
-    }, 300);
-  });
-}
-
-// Event Listeners
-addUserBtn.addEventListener("click", openAddUserModal);
-
-// Close modal when clicking on close button or outside the modal
-document.querySelectorAll(".close-modal").forEach((btn) => {
-  btn.addEventListener("click", closeModals);
-});
-
-userModal.addEventListener("click", function (e) {
-  if (e.target === userModal) {
-    //it's tack the full width and hights
-    closeModals();
+    // Show the modal
+    userModal.classList.add("active");
   }
-});
 
-deleteModal.addEventListener("click", function (e) {
-  if (e.target === deleteModal) {
-    //it's tack the full width and hights
-    closeModals();
+  // Open delete confirmation modal
+  function openDeleteModal(userId) {
+    const user = searchUsers.find((u) => u.id == userId);
+    // if (!user) return;
+
+    document.getElementById("deleteUserId").value = userId;
+    deleteModal.classList.add("active");
   }
-});
 
-saveUserBtn.addEventListener("click", await saveUser);
-confirmDeleteBtn.addEventListener("click", await deleteUser);
+  // Close any modal
+  function closeModals() {
+    userModal.classList.remove("active");
+    deleteModal.classList.remove("active");
+  }
+
+  // Save user (add or update)
+  async function saveUser() {
+ 
+    const userId = document.getElementById("userId").value;
+    let u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value)
+
+    if(await getUserByemail(emailInput.value, oldemail) instanceof User)
+      {
+          emailInput.setCustomValidity('this email is taken');
+          return;   
+      }
+    if (userId) {
+        u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value, userId)
+
+        //update user function
+        UpdateUser(u);
+    } else {
+      // Add new user
+      await addUser(u);
+    }
+
+    closeModals();
+    
+    await renderUsersTable();
+  }
+
+  // Delete user
+  async function deleteUser() {
+    const userId = document.getElementById("deleteUserId").value;
+    let u = new User('','','','',userId)
+    DeleteUser(u)
+    closeModals();
+    await renderUsersTable();
+  }
+
+
+  await init(); // must put in the end of the file

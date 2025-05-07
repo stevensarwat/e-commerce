@@ -1,6 +1,6 @@
-- update email taken
-- admin panal refactor add forms 
-- pagination & search
+d- update email taken
+d- admin panal refactor add forms 
+d- pagination & s  earch
 - aside => change content
 - dynamic table --delay
 - add permitions (pages, actions)

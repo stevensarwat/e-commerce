@@ -1,0 +1,2 @@
+why on load does not fired in include js?
+how to make global scripts run twice (when loaded)
