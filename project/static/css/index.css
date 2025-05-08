@@ -290,7 +290,6 @@ small {
 .social-icon:hover {
   color: var(--primary-color);
   transform: translateY(-6px);
-
 }
 
 .footer hr {

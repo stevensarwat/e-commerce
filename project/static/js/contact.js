@@ -183,16 +183,6 @@ function showNotification(type, message) {
   }, 5000);
 }
 
-// Menu Toggle Function
-function menutoggle() {
-  const MenuItems = document.getElementById("MenuItems");
-  if (MenuItems.style.maxHeight == "0px") {
-    MenuItems.style.maxHeight = "200px";
-  } else {
-    MenuItems.style.maxHeight = "0px";
-  }
-}
-
 // Initialize menu state
 document.addEventListener("DOMContentLoaded", () => {
   const MenuItems = document.getElementById("MenuItems");

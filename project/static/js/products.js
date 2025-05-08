@@ -6,6 +6,609 @@ const sampleProducts = [
     price: 50.0,
     category: "shirt",
     image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //------------------------------------1fstcopy
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //---------------------------seconcopy
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //-----------------------------third copy
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //--------------------forth copy
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //-------------------5
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //----------------------------6
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
+  },
+  {
+    id: 2,
+    name: "HRX Sports Shoes",
+    price: 75.0,
+    category: "shoes",
+    image: "../static/images/product-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Casual Gray Pants",
+    price: 45.0,
+    category: "pants",
+    image: "../static/images/product-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Blue Printed T-Shirt",
+    price: 55.0,
+    category: "shirt",
+    image: "../static/images/product-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Gray Sports Shoes",
+    price: 85.0,
+    category: "shoes",
+    image: "../static/images/product-5.jpg",
+  },
+  {
+    id: 6,
+    name: "Black Printed T-Shirt",
+    price: 48.0,
+    category: "shirt",
+    image: "../static/images/product-6.jpg",
+  },
+  {
+    id: 7,
+    name: "HRX Cotton Socks",
+    price: 15.0,
+    category: "accessories",
+    image: "../static/images/product-7.jpg",
+  },
+  {
+    id: 8,
+    name: "Black Watch",
+    price: 120.0,
+    category: "accessories",
+    image: "../static/images/product-8.jpg",
+  },
+  {
+    id: 9,
+    name: "Sports Watch",
+    price: 135.0,
+    category: "accessories",
+    image: "../static/images/product-9.jpg",
+  },
+  {
+    id: 10,
+    name: "Black Running Shoes",
+    price: 95.0,
+    category: "shoes",
+    image: "../static/images/product-10.jpg",
+  },
+  {
+    id: 11,
+    name: "Gray Sport Shoes",
+    price: 65.0,
+    category: "shoes",
+    image: "../static/images/product-11.jpg",
+  },
+  {
+    id: 12,
+    name: "Black Track Pants",
+    price: 40.0,
+    category: "pants",
+    image: "../static/images/product-12.jpg",
+  },
+  //--------------------------------------------7
+  {
+    id: 1,
+    name: "Red Printed T-Shirt",
+    price: 50.0,
+    category: "shirt",
+    image: "../static/images/product-1.jpg",
+    //the real database has seller id
   },
   {
     id: 2,
@@ -91,19 +694,35 @@ const productsGrid = document.getElementById("ProductFlex");
 const pagination = document.getElementById("pagination");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortFilter = document.getElementById("sortFilter");
-const menuItems = document.getElementById("MenuItems");
-menuItems.style.maxHeight = "0px";
 const searchInput = document.getElementById("searchInput");
 
 let filteredProducts = [...sampleProducts];
 const productsPerPage = 8;
 let currentPage = 1;
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Initialize the page
-function init() {
+// Initialize ::DOMContentLoaded=> fires before external resources
+document.addEventListener("DOMContentLoaded", () => {
   setupEventListeners();
-  applyFiltersAndSort();
+  // applyFiltersAndSort();
+  renderProducts();
+
+  updateCartCount();
+});
+
+function setupEventListeners() {
+  // Search input
+  searchInput.addEventListener("input", () => {
+    applyFiltersAndSort();
+  });
+
+  // Category filter
+  categoryFilter.addEventListener("change", () => {
+    applyFiltersAndSort();
+  });
+
+  // Sort filter
+  sortFilter.addEventListener("change", () => {
+    applyFiltersAndSort();
+  });
 }
 
 // Apply filters and sort
@@ -124,7 +743,7 @@ function applyFiltersAndSort() {
 
   // Apply category filter
   if (category) {
-    filtered = filtered.filter((product) => product.category === category);
+    filtered = filtered.filter((product) => product.category == category);
   }
 
   // Apply sorting
@@ -150,11 +769,10 @@ function applyFiltersAndSort() {
   renderProducts();
 }
 
-// Add to cart functionality
 window.addToCart = function (productId) {
-  const product = sampleProducts.find((p) => p.id === productId);
+  const product = sampleProducts.find((p) => p.id == productId);
   if (product) {
-    const existingItem = cart.find((item) => item.id === productId);
+    const existingItem = cart.find((item) => item.id == productId);
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
@@ -165,12 +783,6 @@ window.addToCart = function (productId) {
     showNotification("Product added to cart!");
   }
 };
-
-function updateCartCount() {
-  const cartCount = document.querySelector(".cart-count");
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartCount.textContent = totalItems;
-}
 
 function showNotification(message) {
   const notification = document.createElement("div");
@@ -215,6 +827,7 @@ function renderProducts() {
             </div>
         `;
     productsGrid.insertAdjacentHTML("beforeend", productHTML);
+    //kareem=> safer because it directly inserts parsed HTML into the DOM, avoiding script execution risks associated with innerHTML
   });
 
   renderPagination();
@@ -228,12 +841,12 @@ function renderPagination() {
   const nextBtn = document.getElementById("nextPage");
 
   // Enable/disable prev/next buttons
-  prevBtn.disabled = currentPage === 1;
-  nextBtn.disabled = currentPage === pageCount;
+  prevBtn.disabled = currentPage == 1;
+  nextBtn.disabled = currentPage == pageCount;
 
-  // Calculate visible page range
-  let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
-  let endPage = Math.min(pageCount, startPage + maxVisibleButtons - 1);
+  //-- Calculate visible page range
+  let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2)); //to go back 2 pages
+  let endPage = Math.min(pageCount, startPage + maxVisibleButtons - 1); //to limit display 5 btns only(maxVisibleButtons)
 
   if (endPage - startPage + 1 < maxVisibleButtons) {
     startPage = Math.max(1, endPage - maxVisibleButtons + 1);
@@ -242,7 +855,7 @@ function renderPagination() {
   // Clear existing page numbers
   pageNumbers.innerHTML = "";
 
-  // Add first page if not in range
+  // if start page (current-2)
   if (startPage > 1) {
     addPageButton(1);
     if (startPage > 2) {
@@ -270,7 +883,7 @@ function renderPagination() {
 
   function addPageButton(pageNum) {
     const button = document.createElement("button");
-    button.className = `page-btn ${pageNum === currentPage ? "active" : ""}`;
+    button.className = `page-btn ${pageNum == currentPage ? "active" : ""}`;
     button.textContent = pageNum;
     button.onclick = () => changePage(pageNum);
     pageNumbers.appendChild(button);
@@ -283,53 +896,20 @@ function renderPagination() {
     pageNumbers.appendChild(span);
   }
 
+  // Change page
+  function changePage(page) {
+    const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
+    if (page >= 1 && page <= pageCount) {
+      currentPage = page;
+      renderProducts();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }
+
   // Add event listeners for prev/next buttons
   prevBtn.onclick = () => changePage(currentPage - 1);
   nextBtn.onclick = () => changePage(currentPage + 1);
 }
-
-// Change page
-function changePage(page) {
-  const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
-  if (page >= 1 && page <= pageCount) {
-    currentPage = page;
-    renderProducts();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-}
-
-// Setup event listeners
-function setupEventListeners() {
-  // Search input
-  searchInput.addEventListener("input", () => {
-    applyFiltersAndSort();
-  });
-
-  // Category filter
-  categoryFilter.addEventListener("change", () => {
-    applyFiltersAndSort();
-  });
-
-  // Sort filter
-  sortFilter.addEventListener("change", () => {
-    applyFiltersAndSort();
-  });
-
-  // Mobile menu toggle
-  window.menutoggle = function () {
-    if (menuItems.style.maxHeight == "0px") {
-      menuItems.style.maxHeight = "200px";
-    } else {
-      menuItems.style.maxHeight = "0px";
-    }
-  };
-}
-
-// Initialize when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  init();
-  updateCartCount();
-});

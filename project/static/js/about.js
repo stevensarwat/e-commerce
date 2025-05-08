@@ -1,13 +1,3 @@
-// Menu toggle functionality
-function menutoggle() {
-  const MenuItems = document.getElementById("MenuItems");
-  if (MenuItems.style.maxHeight == "0px") {
-    MenuItems.style.maxHeight = "200px";
-  } else {
-    MenuItems.style.maxHeight = "0px";
-  }
-}
-
 // Animate features on scroll
 document.addEventListener("DOMContentLoaded", () => {
   const features = document.querySelectorAll(".col-3");

@@ -116,6 +116,10 @@
     font-weight: bold;
     font-size: 1.2em;
 }
+.cart-summary .cart-total .total{
+    color: var( --primary-light);
+    font-size: 1.8rem;
+}
 
 /* Cart Actions */
 .cart-actions {
@@ -144,7 +148,7 @@
 }
 
 #checkout {
-    background: #ff5733;
+    background:var(--primary-dark);
     color: white;
 }
 

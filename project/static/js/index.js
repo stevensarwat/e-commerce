@@ -11,18 +11,6 @@ window.addEventListener('load', async function(e) {
     document.body.style.color = "var(--text-primary)";
 });
 
-var MenuItems = document.getElementById("MenuItems");
-MenuItems.style.maxHeight = "0px";
-
-function menutoggle() {
-    if (MenuItems.style.maxHeight == "0px") {
-        MenuItems.style.maxHeight = "200px";
-        MenuItems.style.backgroundColor = "var(--card-bg)";
-    } else {
-        MenuItems.style.maxHeight = "0px";
-    }
-}
-
 // Cart functionality
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');

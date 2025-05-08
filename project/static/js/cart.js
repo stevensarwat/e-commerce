@@ -5,11 +5,6 @@ const taxElement = document.getElementById("tax");
 const totalElement = document.getElementById("total");
 const clearCartButton = document.getElementById("clear-cart");
 const checkoutButton = document.getElementById("checkout");
-const cartCountElement = document.querySelector(".cart-count");
-const menuItems = document.getElementById("MenuItems");
-
-// Initialize cart from localStorage
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Tax rate
 const TAX_RATE = 0.05;
@@ -19,7 +14,7 @@ function renderCart() {
   cartItemsContainer.innerHTML = "";
   let subtotal = 0;
 
-  if (cart.length === 0) {
+  if (cart.length == 0) {
     cartItemsContainer.innerHTML = `
             <div class="empty-cart">
                 <h3>Your cart is empty</h3>
@@ -27,7 +22,7 @@ function renderCart() {
             </div>
         `;
     updateCartSummary(0);
-    return;
+    return; //exit here => will not go to  foreach
   }
 
   cart.forEach((item) => {
@@ -74,17 +69,11 @@ function updateCartSummary(subtotal) {
   totalElement.textContent = `$${total.toFixed(2)}`;
 }
 
-// Update cart count
-function updateCartCount() {
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartCountElement.textContent = totalItems;
-}
-
-// Update item quantity
+// Update item quantity in local storage
 window.updateQuantity = function (productId, newQuantity) {
   if (newQuantity < 1) return;
 
-  const itemIndex = cart.findIndex((item) => item.id === productId);
+  const itemIndex = cart.findIndex((item) => item.id == productId);
   if (itemIndex !== -1) {
     cart[itemIndex].quantity = newQuantity;
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -166,15 +155,6 @@ function generateOrderId() {
 function isLoggedIn() {
   return localStorage.getItem("userId") !== null;
 }
-
-// Mobile menu toggle
-window.menutoggle = function () {
-  if (menuItems.style.maxHeight == "0px") {
-    menuItems.style.maxHeight = "200px";
-  } else {
-    menuItems.style.maxHeight = "0px";
-  }
-};
 
 // Initialize cart on page load
 document.addEventListener("DOMContentLoaded", () => {
