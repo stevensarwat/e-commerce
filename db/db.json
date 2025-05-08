@@ -3,32 +3,10 @@
     {
       "id": "90cff48a-7dd5-4add-bef0-36b07ee49dfa",
       "name": "kareem",
-      "email": "aadminadmin@gmail.com",
+      "email": "k@gmail.com",
       "pass": "MTIz",
       "role": "admin",
-      "orders": [
-        {
-          "orderID": "90cff48a-87d5-4add-bef0-36b07ee49dfa",
-          "productId": 1,
-          "quantity": 5,
-          "status": "shipped",
-          "sellerId": "01254"
-        },
-        {
-          "orderID": "90cff48a-87d5-4adf-bef0-36b07ee49dfa",
-          "productId": 1,
-          "quantity": 5,
-          "status": "delivered",
-          "sellerId": "01254"
-        },
-        {
-          "orderID": "90cff48a-87d5-4add-bef0-36as7ee49dfa",
-          "productId": 1,
-          "quantity": 5,
-          "status": "shipped",
-          "sellerId": "01254"
-        }
-      ]
+      "orders": []
     },
     {
       "id": "622ca9a7-f639-4eff-84fd-1ded635e8d74",
