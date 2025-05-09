@@ -1,7 +1,9 @@
-import {User, addUser, getUserByemail, isLogged} from './db/userDB.js'
+import * as userDB from './db/userDB.js'
 
 window.addEventListener('load', async function() {
-    await isLogged();
+    if(await userDB.isLogged() == 1)
+        window.location.href = '../screens/panel/adminP.html';
+
     const registrationForm = document.getElementById('registrationForm');
     const email = document.getElementById('email');
     const emailError = document.getElementById('emailError');
@@ -72,10 +74,10 @@ window.addEventListener('load', async function() {
             pass: document.getElementById('password').value, // Base64 encode password
             role: document.getElementById('role').value
         };
-        let u = new User(formData.name, formData.email, formData.pass, formData.role)
-        if(await getUserByemail(formData.email, '') == null)
+        let u = new userDB.User(formData.name, formData.email, formData.pass, formData.role)
+        if(await userDB.getUserByemail(formData.email, '') == null)
         {
-            await addUser(u);
+            await userDB.add(u);
             // success
             window.location.href = 'login.html';
         }

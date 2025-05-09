@@ -1,4 +1,4 @@
-import {User, get, addUser, UpdateUser, DeleteUser, getUserByemail} from '../db/userDB.js'
+import {User, get, add, Update, Delete, getUserByemail} from '../db/userDB.js'
 let users = []
 let searchUsers = []
 
@@ -267,13 +267,13 @@ let oldemail='';
           return;   
       }
     if (userId) {
-        u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value, userId)
+        u = new User(nameInput.value, emailInput.value, passwordInput.value, roleInput.value, userId,users.find(us=>us.id == userId).orders)
 
         //update user function
-        UpdateUser(u);
+        Update(u);
     } else {
       // Add new user
-      await addUser(u);
+      await add(u);
     }
 
     closeModals();
@@ -285,7 +285,7 @@ let oldemail='';
   async function deleteUser() {
     const userId = document.getElementById("deleteUserId").value;
     let u = new User('','','','',userId)
-    DeleteUser(u)
+    Delete(u)
     closeModals();
     await renderUsersTable();
   }

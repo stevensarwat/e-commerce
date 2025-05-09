@@ -1,15 +1,27 @@
-import {User, get} from './db/userDB.js'
+import * as userDB from './db/userDB.js'
 
 window.addEventListener('load', async function(e) {
-    let data = await get();
+    let data = await userDB.get();
     console.log(data);
     for (const el of data) {
-        console.log(el instanceof User);
+        console.log(el instanceof userDB.User);
     }
     updateCartCount();
     document.body.style.backgroundColor = "var(--background)";
     document.body.style.color = "var(--text-primary)";
 });
+
+var MenuItems = document.getElementById("MenuItems");
+MenuItems.style.maxHeight = "0px";
+
+function menutoggle() {
+    if (MenuItems.style.maxHeight == "0px") {
+        MenuItems.style.maxHeight = "200px";
+        MenuItems.style.backgroundColor = "var(--card-bg)";
+    } else {
+        MenuItems.style.maxHeight = "0px";
+    }
+}
 
 // Cart functionality
 function updateCartCount() {

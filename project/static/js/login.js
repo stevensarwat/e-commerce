@@ -1,7 +1,9 @@
-import {User, isFound, login, isLogged} from './db/userDB.js'
+import * as userDB from './db/userDB.js'
 
 window.addEventListener('load', async function() {
-    await isLogged();
+        
+        if(await userDB.isLogged() == 1)
+            window.location.href = '../screens/panel/adminP.html';
     
     // Login form handling
     const loginForm = document.getElementById('loginForm');
@@ -47,11 +49,11 @@ window.addEventListener('load', async function() {
         }
         
         // Check if the credentials match our sample user
-        let u = await isFound(emailInput.value.trim(), passwordInput.value.trim());
-        if ( u instanceof User)   {
+        let u = await userDB.isFound(emailInput.value.trim(), passwordInput.value.trim());
+        if ( u instanceof userDB.User)   {
             
             //success
-            if(remember.checked)login(u);
+            userDB.login(u,remember.checked);
             window.location.href = '../screens/panel/adminP.html'; //change later
 
         } else {

@@ -6,23 +6,27 @@ let mainURL = 'http://localhost:3000/users';
 export const get = async function (id =null) {
     let users = []
     let data = await dbGate.get(mainURL, id);
-    for (const el of data) {
-        users.push(new User(el.name, el.email, atob(el.pass), el.role, el.id))
+        if(id){
+            users.push(new User(data.name, data.email, atob(data.pass), data.role, data.id,data.orders));
+    }else{
+        for (const el of data) {
+            users.push(new User(el.name, el.email, atob(el.pass), el.role, el.id,el.orders))
+        }
     }
     return users;
 }
 
-export const addUser = async function (user) {
+export const add = async function (user) {
     if(user instanceof User)
         await dbGate.post(mainURL,user)
 }
 
-export const UpdateUser = async function (user) {
+export const Update = async function (user) {
     if(user instanceof User)
         await dbGate.update(mainURL,user.id,user)
 }
 
-export const DeleteUser = async function (user) {
+export const Delete = async function (user) {
     if(user instanceof User)
         await dbGate.del(mainURL,user.id)
 }
@@ -42,12 +46,6 @@ export const isFound = async function (email, pass) {
 
 const getUserById = async function (id) {
     let data = await get(id);
-    // for (const user of data) {
-    //     if(user.id == id){
-    //         let u = new User(user.name, user.email, user.pass, user.role, user.id)
-    //         return u;
-    //     }
-    // }
     if(data){
         let user = data[0];
         return new User(user.name, user.email, user.pass, user.role, user.id)
@@ -80,22 +78,25 @@ export const getUserByemail = async function (email, exclude) {
     return null;
 }
 
-export const login = function (usr) {
+export const login = function (usr,rm = null) {
     localStorage.setItem('login', btoa(usr.id));
+    localStorage.removeItem('rm');
+    if(rm == true)localStorage.setItem('rm', 'true');
 }
 
 export const logout= function () {
     localStorage.removeItem('login');
+    localStorage.removeItem('rm');
     window.location.href = '../../screens/login.html';
 }
 
 export const isLogged= async function () {
     let id = localStorage.getItem('login');
+    let rememberMe = localStorage.getItem('login');
     if(id != null && await getUserById(atob(id)) != null){
-        window.location.href = '../screens/panel/adminP.html';
-        return true;
+        if(rememberMe == 'true') return 1;
+        return 0;
     }
-    return false;
 }
 
 ////////////////////////////////////////////////////////////////////// class

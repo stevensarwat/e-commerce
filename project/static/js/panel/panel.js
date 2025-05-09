@@ -1,4 +1,4 @@
-import {logout} from '../db/userDB.js'
+import * as userDB from '../db/userDB.js'
 
 //Sidebar   
 const logOut = document.getElementById("logOut");
@@ -10,7 +10,7 @@ window.onhashchange = renderPage;
 window.addEventListener('load', function(e) { 
   
   logOut.addEventListener('click', function (e) {
-    logout();
+    userDB.logout();
   });
   navUser.addEventListener('click', function (e) {
     navigateTo('users');
@@ -19,18 +19,13 @@ window.addEventListener('load', function(e) {
   navProducts.addEventListener('click', function (e) {
     navigateTo('products');
   });
-  this.document.querySelectorAll('.nav-link').forEach(element => {
-      element.addEventListener('click',function() {
-        // location.reload(true);
-      })
-    }); 
   renderPage(); //for intail state
 })
 
 
 const pages = {
   users: "../../screens/panel/users.html",
-  products: "../../screens/panel/products.html",
+  products: "../../screens/panel/component.html",
 };
 
 function navigateTo(page) {
