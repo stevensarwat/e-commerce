@@ -10,7 +10,7 @@ const checkoutButton = document.getElementById("checkout");
 const TAX_RATE = 0.05;
 
 // Render cart items
-function renderCart() {
+function renderTheOrder() {
   cartItemsContainer.innerHTML = "";
   let subtotal = 0;
 
@@ -21,7 +21,7 @@ function renderCart() {
                 <p>Go to <a href="products.html">products page</a> to add items to your cart.</p>
             </div>
         `;
-    updateCartSummary(0);
+    updateOrderSummary(0);
     return; //exit here => will not go to  foreach
   }
 
@@ -56,11 +56,11 @@ function renderCart() {
     cartItemsContainer.insertAdjacentHTML("beforeend", cartItemHTML);
   });
 
-  updateCartSummary(subtotal);
+  updateOrderSummary(subtotal);
 }
 
 // Update cart summary
-function updateCartSummary(subtotal) {
+function updateOrderSummary(subtotal) {
   const tax = subtotal * TAX_RATE;
   const total = subtotal + tax;
 
@@ -76,8 +76,8 @@ window.updateQuantity = function (productId, newQuantity) {
   const itemIndex = cart.findIndex((item) => item.id == productId);
   if (itemIndex !== -1) {
     cart[itemIndex].quantity = newQuantity;
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+    localStorage.setItem("cart", JSON.stringify(cart)); //replace existing in local storge
+    renderTheOrder();
     updateCartCount();
   }
 };
@@ -86,7 +86,7 @@ window.updateQuantity = function (productId, newQuantity) {
 window.removeFromCart = function (productId) {
   cart = cart.filter((item) => item.id !== productId);
   localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
+  renderTheOrder();
   updateCartCount();
 };
 
@@ -95,7 +95,7 @@ clearCartButton.addEventListener("click", () => {
   if (confirm("Are you sure you want to clear your cart?")) {
     cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+    renderTheOrder();
     updateCartCount();
   }
 });
@@ -136,7 +136,7 @@ checkoutButton.addEventListener("click", async () => {
     // Clear cart after successful checkout
     cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+    renderTheOrder();
     updateCartCount();
 
     alert("Order placed successfully!");
@@ -150,14 +150,13 @@ checkoutButton.addEventListener("click", async () => {
 function generateOrderId() {
   return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
-
 // Check if user is logged in
 function isLoggedIn() {
   return localStorage.getItem("userId") !== null;
 }
 
-// Initialize cart on page load
+// 1-Initialize cart on page load
 document.addEventListener("DOMContentLoaded", () => {
-  renderCart();
+  renderTheOrder();
   updateCartCount();
 });

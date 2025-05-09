@@ -144,7 +144,8 @@
 }
 
 #clear-cart:hover {
-    background: #e0e0e0;
+    color: var(--white);
+    background: var(--error-color);
 }
 
 #checkout {
@@ -153,7 +154,7 @@
 }
 
 #checkout:hover {
-    background: #e64a2e;
+    background:var(--text-muted) ;
 }
 
 /* Responsive Design */

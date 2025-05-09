@@ -15,6 +15,22 @@
       "pass": "MTIz",
       "role": "buyer",
       "orders": []
+    },
+    {
+      "id": "91158220-5d64-434c-9828-92b74c6fe06d",
+      "name": "kareem-zarif",
+      "email": "eng.kareem.zarif@gmail.com",
+      "pass": "MTEx",
+      "role": "buyer",
+      "orders": []
+    },
+    {
+      "id": "3dfd4810-a8cd-4e76-b6b6-007eeed41136",
+      "name": "kareem",
+      "email": "a@gmail.com",
+      "pass": "YWFhYQ==",
+      "role": "buyer",
+      "orders": []
     }
   ],
   "products": [
