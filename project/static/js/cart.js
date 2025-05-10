@@ -103,59 +103,61 @@ clearCartButton.addEventListener("click", () => {
 
 // Checkout process
 checkoutButton.addEventListener("click", async () => {
-  if (!isLoggedIn()) {
+  while (!(await isLoggedIn())) {
     alert("Please log in to checkout");
-    window.location.href = "login.html";
+    // window.location.href = "login.html";
     return;
   }
 
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * (item.quantity || 1),
+    0
+  );
+
+  const order = {
+    id: crypto.randomUUID(),
+    date: Date.now(),
+    price: totalPrice,
+    state: "pending",
+    items: cart,
+  };
+
   try {
-    const userId = localStorage.getItem("userId");
-    const orders = cart.map((item) => ({
-      orderID: generateOrderId(),
-      productId: item.id,
-      quantity: item.quantity,
-      status: "pending",
-      sellerId: item.sellerId || "01254", // Default seller ID if not specified
-    }));
-
-    const response = await fetch("http://localhost:3000/users/" + userId);
-    const user = await response.json();
-
-    // Add new orders to user's orders array
-    user.orders = [...user.orders, ...orders];
-
-    // Update user data in db.json
-    await fetch("http://localhost:3000/users/" + userId, {
-      method: "PUT",
+    const response = await fetch("http://localhost:3000/orders", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(order),
     });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
 
-    // Clear cart after successful checkout
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderTheOrder();
-    updateCartCount();
-
-    alert("Order placed successfully!");
-  } catch (error) {
-    console.error("Checkout error:", error);
-    alert("An error occurred during checkout. Please try again.");
+    localStorage.removeItem("cart");
+    alert("Order has been successfully submitted.");
+  } catch (e) {
+    console.log(`can not send orde to db :: ${e}`);
+    alert("There was an error submitting your order. Please try again.");
   }
 });
 
-// Generate unique order ID
-function generateOrderId() {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2);
-}
 // Check if user is logged in
-function isLoggedIn() {
-  return localStorage.getItem("userId") !== null;
+async function isLoggedIn() {
+  const localStorgeLogin = localStorage.getItem("login");
+  if (localStorgeLogin) {
+    try {
+      const response = await fetch("http://localhost:3000/users");
+      const data = await response().json();
+      return data.users.some((u) => btoa(u.id) == localStorgeLogin);
+      return true;
+    } catch (e) {
+      console.log(`problem fetching user details from database :: ${e}`);
+      return false;
+    }
+  }
+  return false;
 }
-
 // 1-Initialize cart on page load
 document.addEventListener("DOMContentLoaded", () => {
   renderTheOrder();
