@@ -36,34 +36,74 @@
   "products": [
     {
       "id": "545",
-      "name": "product1",
-      "price": 30.5,
+      "name": "server-t_shirst",
+      "price": 15,
       "cat": "books",
-      "images": "D://...",
+      "images": "../static/images/product-1.jpg",
       "sellerId": "01254"
     },
     {
       "id": "546",
-      "name": "product2",
+      "name": "server-shoe",
       "price": 30.5,
       "cat": "books",
-      "images": "D://...",
+      "images": "../static/images/product-2.jpg",
       "sellerId": "01254"
     },
     {
       "id": "547",
-      "name": "product3",
-      "price": 30.5,
+      "name": "server-trouser",
+      "price": 30,
       "cat": "books",
-      "images": "D://...",
+      "images": "../static/images/product-3.jpg",
       "sellerId": "01254"
     },
     {
       "id": "548",
-      "name": "product4",
-      "price": 30.5,
+      "name": "server-shirt_blue",
+      "price": 20,
       "cat": "books",
-      "images": "D://...",
+      "images": "../static/images/product-4.jpg",
+      "sellerId": "01254"
+    },
+    {
+      "id": "548",
+      "name": "server-shirt_blue",
+      "price": 20,
+      "cat": "books",
+      "images": "../static/images/product-4.jpg",
+      "sellerId": "01254"
+    },
+    {
+      "id": "548",
+      "name": "server-shirt_blue",
+      "price": 20,
+      "cat": "books",
+      "images": "../static/images/product-4.jpg",
+      "sellerId": "01254"
+    },
+    {
+      "id": "548",
+      "name": "server-shirt_blue",
+      "price": 20,
+      "cat": "books",
+      "images": "../static/images/product-4.jpg",
+      "sellerId": "01254"
+    },
+    {
+      "id": "123",
+      "name": "server-shirt_blue",
+      "price": 20,
+      "cat": "pens",
+      "images": "../static/images/product-4.jpg",
+      "sellerId": "01254"
+    },
+    {
+      "id": "548",
+      "name": "server-shirt_blue",
+      "price": 20,
+      "cat": "shoes",
+      "images": "../static/images/product-4.jpg",
       "sellerId": "01254"
     }
   ]

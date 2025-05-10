@@ -20,8 +20,8 @@ function updateCartCount() {
   cartCount.textContent = totalItems;
 }
 
-//make fuctions global
-window.updateCartCount() = updateCartCount();
+//make  global
+window.updateCartCount = updateCartCount;
 
 //call after loading 
 document.addEventListener('DOMContentLoaded',updateCartCount);

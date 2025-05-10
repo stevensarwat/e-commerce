@@ -51,10 +51,7 @@
                 <div class="filters">
                     <select id="categoryFilter">
                         <option value="">All Categories</option>
-                        <option value="shirt">T-Shirts</option>
-                        <option value="shoes">Shoes</option>
-                        <option value="pants">Pants</option>
-                        <option value="accessories">Accessories</option>
+                        <!-- dynamic catgories from db.json -->
                     </select>
                     <select id="sortFilter">
                         <option value="default">Default Sorting</option>
@@ -69,7 +66,7 @@
                 <!-- Products will be dynamically inserted here -->
             </div>
 
-            <div class="pagination">
+            <div id="pagination">
                 <button id="prevPage" class="page-btn"><i class="fa fa-angle-left"></i></button>
                 <div id="pageNumbers" class="page-numbers">
                     <!-- Page numbers will be dynamically inserted here -->
@@ -93,7 +90,7 @@
         </div>
     </div>
     <script src="../static/js/globalFuncs.js"></script>
-    <script type="module" src="../static/js/products.js"></script>
+    <script  src="../static/js/products.js"></script>
 </body>
 
 </html>
