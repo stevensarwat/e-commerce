@@ -106,5 +106,932 @@
       "images": "../static/images/product-4.jpg",
       "sellerId": "01254"
     }
+  ],
+  "orders": [
+    {
+      "id": "af2bc287-b7aa-4b27-89e7-2746135b683c",
+      "date": 1746906363275,
+      "price": 30,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "86e41f61-6e4a-49e3-84e4-ebbb2929deb1",
+      "date": 1746906363276,
+      "price": 30,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "60e03ce1-9ee8-4ed1-b515-57929a3fbd46",
+      "date": 1746906407876,
+      "price": 15,
+      "state": "pending",
+      "items": [
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "80619157-470b-4674-bcae-86c5bfb6999b",
+      "date": 1746906407877,
+      "price": 15,
+      "state": "pending",
+      "items": [
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "237f7c4b-4dd9-4b31-871e-ac58d2adc360",
+      "date": 1746906471009,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "6e13a48b-95bf-4970-9638-bac2ed039a3b",
+      "date": 1746906471010,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "812497c7-65d7-4495-a374-595194f232d6",
+      "date": 1746906584840,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "75bf4aff-5c57-4d50-b49e-a519ad0b8998",
+      "date": 1746906584840,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "d8c1e69c-e8ad-4209-9541-1f8d9ca6633d",
+      "date": 1746906599290,
+      "price": 65.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3b314cbc-d9dd-41eb-8a41-6289f0d1a252",
+      "date": 1746906599291,
+      "price": 65.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "149fd9ce-1032-4bf7-9c3f-05ccb1d7891d",
+      "date": 1746908820336,
+      "price": 65,
+      "state": "pending",
+      "items": [
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "019b4af9-fc70-44e4-9c52-8d8d670d44c3",
+      "date": 1746908820337,
+      "price": 65,
+      "state": "pending",
+      "items": [
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "4c3b76b1-111b-46ea-8277-02c999073fdf",
+      "date": 1746908875352,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "4cb92235-d7b4-4268-a54e-f0541e138535",
+      "date": 1746908875352,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "308c81ef-7980-4384-a09f-8b64f7cff745",
+      "date": 1746908900559,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "7af2b443-b130-40a2-b52f-d52950e36166",
+      "date": 1746908900560,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "4cab0345-f6d3-4986-8039-69aaf7b44a59",
+      "date": 1746908933750,
+      "price": 385.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 17
+        }
+      ]
+    },
+    {
+      "id": "e78ae7a5-89ce-4825-bba2-f7a6882c23ed",
+      "date": 1746908933751,
+      "price": 385.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "123",
+          "name": "server-shirt_blue",
+          "price": 20,
+          "category": "pens",
+          "image": "../static/images/product-4.jpg",
+          "sellerId": "01254",
+          "quantity": 17
+        }
+      ]
+    },
+    {
+      "id": "e23cecc9-3c39-4a13-bfce-4a1372c044a3",
+      "date": 1746908987391,
+      "price": 75.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "50da66ea-364f-4650-a701-52bf4c520c01",
+      "date": 1746908987392,
+      "price": 75.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "e9a1e262-9d4f-4fc3-a00d-123366bb1181",
+      "date": 1746909283116,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "0f911f0a-a3cd-418f-9885-82b08edb8609",
+      "date": 1746909283756,
+      "price": 0,
+      "state": "pending",
+      "items": []
+    },
+    {
+      "id": "c7c2f433-b0c0-4c29-bcaa-98678e611f44",
+      "date": 1746909684437,
+      "price": 60.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "8423bfaf-870a-4baf-9c18-d52b9d9be8b9",
+      "date": 1746909684437,
+      "price": 60.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "f87bf9e0-b6b4-45f5-80b4-c13c9f37a4e2",
+      "date": 1746909933196,
+      "price": 90.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "0c81f38e-2028-490e-a62a-3ce4f4ca75ad",
+      "date": 1746909933196,
+      "price": 90.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "d058ba4b-f1d5-4102-8fca-f8823a371e4c",
+      "date": 1746910231953,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "e410788b-2288-47e4-a31f-aafc4d4c6be4",
+      "date": 1746910231953,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "db845e43-a8fe-4fbf-a67b-322b8fbff4bd",
+      "date": 1746910295372,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3e2341ad-d299-442e-b2eb-5fee9e161393",
+      "date": 1746910295373,
+      "price": 45.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "bca1776f-9a1e-4673-843a-c90d3ce2c276",
+      "date": 1746910478451,
+      "price": 75.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "5af1df5f-8bbf-47e0-9464-9f24eeabeaa4",
+      "date": 1746910479486,
+      "price": 75.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "8c4b016b-4810-4e47-adee-235c62c58031",
+      "date": 1746910516387,
+      "price": 63.525000000000006,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "beec2a03-d418-4bf3-8154-c3e693503ee3",
+      "date": 1746910523518,
+      "price": 63.525000000000006,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "8f816291-27af-4dbd-ae7d-ecc2b903c7f3",
+      "date": 1746910524222,
+      "price": 63.525000000000006,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "e186dad6-9fd0-41fd-921e-74f782872b25",
+      "date": 1746910535101,
+      "price": 31.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3e1ccd7d-99bf-4ed3-ac9c-f55c5403f3e7",
+      "date": 1746910535916,
+      "price": 31.5,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "9d40a133-9acd-4dd5-a5f4-81abc6a48e68",
+      "date": 1746910849690,
+      "price": 79.275,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "545",
+          "name": "server-t_shirst",
+          "price": 15,
+          "category": "books",
+          "image": "../static/images/product-1.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "541e95b9-a534-4812-8a32-b37827172236",
+      "date": 1746910892915,
+      "price": 63.525000000000006,
+      "state": "pending",
+      "items": [
+        {
+          "id": "547",
+          "name": "server-trouser",
+          "price": 30,
+          "category": "books",
+          "image": "../static/images/product-3.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        },
+        {
+          "id": "546",
+          "name": "server-shoe",
+          "price": 30.5,
+          "category": "books",
+          "image": "../static/images/product-2.jpg",
+          "sellerId": "01254",
+          "quantity": 1
+        }
+      ]
+    }
   ]
 }

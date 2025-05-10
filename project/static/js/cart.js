@@ -103,16 +103,24 @@ clearCartButton.addEventListener("click", () => {
 
 // Checkout process
 checkoutButton.addEventListener("click", async () => {
-  while (!(await isLoggedIn())) {
+  const login = localStorage.getItem("login");
+  if (!login) {
     alert("Please log in to checkout");
-    // window.location.href = "login.html";
+    window.location.href = "login.html";
     return;
   }
 
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * (item.quantity || 1),
-    0
-  );
+  const totalPrice =
+    cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0) *
+    (1.05).toFixed(2);
+  if (totalPrice == 0) {
+    alert("can not make empty order");
+    return;
+  }
+
+  if (confirm(`you about submit order :${totalPrice}" $`)) {
+    
+  
 
   const order = {
     id: crypto.randomUUID(),
@@ -125,39 +133,21 @@ checkoutButton.addEventListener("click", async () => {
   try {
     const response = await fetch("http://localhost:3000/orders", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order),
     });
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
 
     localStorage.removeItem("cart");
-    alert("Order has been successfully submitted.");
+    alert("You successfully submitted your order.");
+    window.location.href = "products.html";
   } catch (e) {
-    console.log(`can not send orde to db :: ${e}`);
+    console.log(`Cannot send order to db :: ${e}`);
     alert("There was an error submitting your order. Please try again.");
-  }
+    }
+  };
 });
 
-// Check if user is logged in
-async function isLoggedIn() {
-  const localStorgeLogin = localStorage.getItem("login");
-  if (localStorgeLogin) {
-    try {
-      const response = await fetch("http://localhost:3000/users");
-      const data = await response().json();
-      return data.users.some((u) => btoa(u.id) == localStorgeLogin);
-      return true;
-    } catch (e) {
-      console.log(`problem fetching user details from database :: ${e}`);
-      return false;
-    }
-  }
-  return false;
-}
 // 1-Initialize cart on page load
 document.addEventListener("DOMContentLoaded", () => {
   renderTheOrder();
