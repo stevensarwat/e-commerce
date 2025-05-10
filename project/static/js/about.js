@@ -15,10 +15,4 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.1 }
   );
 
-  // Update cart count from localStorage if available
-  const cartCount = document.querySelector(".cart-count");
-  if (cartCount) {
-    const count = localStorage.getItem("cartCount") || "0";
-    cartCount.textContent = count;
-  }
 });

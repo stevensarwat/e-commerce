@@ -84,7 +84,8 @@ window.updateQuantity = function (productId, newQuantity) {
 
 // Remove item from cart
 window.removeFromCart = function (productId) {
-  cart = cart.filter((item) => item.id !== productId);
+  cart = cart.filter((item) => item.id != productId);
+  console.log(cart);
   localStorage.setItem("cart", JSON.stringify(cart));
   renderTheOrder();
   updateCartCount();
